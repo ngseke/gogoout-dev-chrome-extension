@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin: 0;
+  color: #333;
+  border-bottom: solid 1px grey;
+  width: 100%;
+  padding: .75rem .75rem;
+}
+
+section {
+  padding: 1rem .75rem;
+}
+
+h2 {
+  color: #777;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: .5rem;
+
+}
+h2:not(:first-child) {
+  margin-top: .7rem;
+}
+
+button {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #345;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  padding: 7px 10px;
+  border: none;
+  min-width: 100%;
+  cursor: pointer;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
