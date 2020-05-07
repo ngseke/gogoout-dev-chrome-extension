@@ -17,6 +17,9 @@ const actions = {
       const src = el.getAttribute('src')
       el.setAttribute('src', src.replace('gogooutlaravel.data', 'gogoout.com'))
     })
+  },
+  toggleLang: () => {
+    
   }
 }
 
