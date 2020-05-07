@@ -54,6 +54,7 @@ button {
   letter-spacing: 1px;
   margin-bottom: 5px;
   transition: all .1s;
+  box-shadow: 0 0px 10px rgba(0,0,0,.3);
 }
 
 button:hover {
