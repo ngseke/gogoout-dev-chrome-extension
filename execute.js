@@ -16,7 +16,11 @@ const actions = {
     Array.from(document.querySelectorAll('img')).forEach(el=> {
       const src = el.getAttribute('src')
       el.setAttribute('src', src.replace('gogooutlaravel.data', 'gogoout.com'))
+      console.log(el.getAttribute('src'))
     })
+  },
+  goToSystemAdmin: () => {
+    location.href = '/systemAdmin'
   },
   toggleLang: () => {
     
