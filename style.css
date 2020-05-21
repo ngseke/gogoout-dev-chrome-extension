@@ -49,7 +49,7 @@ button {
   font-weight: bold;
   padding: 7px 10px;
   border: none;
-  min-width: 100%;
+  width: 100%;
   cursor: pointer;
   letter-spacing: 1px;
   margin-bottom: 5px;
@@ -60,4 +60,17 @@ button {
 button:hover {
   background-color: #1e1e1e;
   text-shadow: 2px 0 0 #f0f, -2px 0 0 #0ff;
+}
+
+.row {
+  display: flex;
+  margin: 0 -2.5px
+}
+
+.gold {
+  color: #FFD700
+}
+
+.row button {
+  margin: 0 2.5px 5px
 }

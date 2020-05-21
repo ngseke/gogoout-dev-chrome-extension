@@ -3,8 +3,9 @@ var getSelectedTab = (tab) => {
   var sendMessage = (messageObj) => chrome.tabs.sendMessage(tabId, messageObj)
  
   var handler = function ({ target }) {
-    var action = target.dataset.action
-    sendMessage({ action })
+    const { action, href } = target.dataset
+    
+    sendMessage({ action, href })
   }
   
   document.addEventListener('click', function (e) {

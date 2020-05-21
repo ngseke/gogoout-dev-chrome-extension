@@ -19,14 +19,13 @@ const actions = {
       console.log(el.getAttribute('src'))
     })
   },
-  goToSystemAdmin: () => {
-    location.href = '/systemAdmin'
-  },
-  toggleLang: () => {
-    
-  }
 }
 
-const onMessage = (message) => actions[message.action]()
+const directTo = (url) => location.href = url
+
+const onMessage = ({ action, href }) => {
+  if (href) directTo(href)
+  else actions[message.action]()
+}
 
 chrome.runtime.onMessage.addListener(onMessage)

@@ -17,10 +17,7 @@
   ],
   "content_scripts": [
     {
-      "matches": [
-        "https://gogooutlaravel.data/*",
-        "https://ccore.spgateway.com/*"
-      ],
+      "matches": ["<all_urls>"],
       "js": [
         "execute.js"
       ]
