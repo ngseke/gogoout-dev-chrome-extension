@@ -68,7 +68,11 @@ button:hover {
 }
 
 .gold {
-  color: #FFD700
+  color: #FFD700;
+}
+
+.blue {
+  color: #6fffe9;
 }
 
 .row button {
