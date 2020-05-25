@@ -36,6 +36,8 @@ function replaceHost (newHost) {
 
   if (['gogooutlaravel.data', 'gogoout.com'].some(i => host.includes(i))) {
     directTo(newHost + pathname + search)
+  } else {
+    directTo(newHost)
   }
 }
 
