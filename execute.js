@@ -16,16 +16,32 @@ const actions = {
     Array.from(document.querySelectorAll('img')).forEach(el=> {
       const src = el.getAttribute('src')
       el.setAttribute('src', src.replace('gogooutlaravel.data', 'gogoout.com'))
-      console.log(el.getAttribute('src'))
     })
   },
+  toLocal: () => {
+    replaceHost('//gogooutlaravel.data')
+  },
+  toZhengshiqu: () => {
+    replaceHost('//gogoout.com')
+  },
+  toCeshuiqu: () => {
+    replaceHost('//test.gogoout.com')
+  }
 }
 
 const directTo = (url) => location.href = url
 
+function replaceHost (newHost) {
+  const { host, pathname, search } = window.location
+
+  if (['gogooutlaravel.data', 'gogoout.com'].some(i => host.includes(i))) {
+    directTo(newHost + pathname + search)
+  }
+}
+
 const onMessage = ({ action, href }) => {
   if (href) directTo(href)
-  else actions[message.action]()
+  else actions[action]()
 }
 
 chrome.runtime.onMessage.addListener(onMessage)
