@@ -11,6 +11,9 @@ const actions = {
     Array.from(document.querySelectorAll('input[type=hidden]')).forEach(el=> {
       el.setAttribute('type', 'text')
     })
+    Array.from(document.querySelectorAll('input')).forEach(el=> {
+      el.style.display = 'block'
+    })
   },
   showImg: () => {
     Array.from(document.querySelectorAll('img')).forEach(el=> {

@@ -42,24 +42,29 @@ h2:not(:first-child) {
 
 button {
   display: inline-block;
-  border-radius: 10px;
-  background-color: #333;
-  font-size: 14px;
+  border-radius: 5px;
+  background-color: #1e1e1e;
+  font-size: 12px;
   color: white;
   font-weight: bold;
   padding: 7px 10px;
   border: none;
+  outline: none;
   width: 100%;
   cursor: pointer;
   letter-spacing: 1px;
   margin-bottom: 5px;
   transition: all .1s;
-  box-shadow: 0 0px 10px rgba(0,0,0,.3);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
-button:hover {
-  background-color: #1e1e1e;
-  text-shadow: 2px 0 0 #f0f, -2px 0 0 #0ff;
+button:hover {  
+  /* text-shadow: 2px 0 0 #f0f, -2px 0 0 #0ff; */
+  opacity: .9;
+}
+
+button:active {
+  transform: scale(.98);
 }
 
 .row {
