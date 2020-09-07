@@ -13,14 +13,15 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "activeTab"
+    "activeTab", "storage"
   ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": [
         "execute.js"
-      ]
+      ],
+      "run_at": "document_start"
     }
   ]
 }

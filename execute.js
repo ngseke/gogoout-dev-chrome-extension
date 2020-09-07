@@ -50,3 +50,21 @@ const onMessage = ({ action, href }) => {
 }
 
 chrome.runtime.onMessage.addListener(onMessage)
+
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const cookieCloseBtn = document.querySelector('.cookieinfo .cookieinfo-close')
+    if (cookieCloseBtn) cookieCloseBtn.click()
+  }, 1000)
+
+  // 自動登入 systemAdmin
+  if (location.pathname === '/systemAdmin/login') {
+    chrome.storage.sync.get(['systemAdminEmail', 'systemAdminPassword'], ({ systemAdminEmail, systemAdminPassword }) => {
+      if (systemAdminEmail && systemAdminPassword) {
+        document.querySelector('#inputEmail3').value = systemAdminEmail
+        document.querySelector('#inputPassword3').value = systemAdminPassword
+        document.querySelector('[type=submit]').click()
+      }
+    })
+  }
+})
