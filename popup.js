@@ -21,10 +21,22 @@ var getSelectedTab = (tab) => {
 
   $fields.forEach(el => {
     const name = el.getAttribute('name')
-    chrome.storage.sync.get(name, value => el.value = value[name] ?? '')
+    
+    // 填值回欄位
+    chrome.storage.sync.get(name, value => {
+      ({
+        text: () => el.value = value[name] ?? '',
+        checkbox: () => el.checked = value[name] ?? false,
+      })[el.getAttribute('type') ?? 'text']()
+    })
+    // 監聽欄位變動時存檔
     el.addEventListener('change', ({ target }) => {
-      console.log(target.value.trim())
-      chrome.storage.sync.set({ [name]: target.value.trim() })
+      let value = {
+        text: target.value.trim(),
+        checkbox: target.checked,
+      }[target.getAttribute('type') ?? 'text']
+
+      chrome.storage.sync.set({ [name]: value })
     })
   })
 }
